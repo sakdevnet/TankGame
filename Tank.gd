@@ -44,9 +44,9 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2.ZERO	
 	velocity.y = MoveDirection
 	#velocity = velocity.normalized()	
-	velocity = velocity.rotated(calculatedRotation) * Speed
-	#var collisionInfo: KinematicCollision2D = move_and_collide(velocity)
-	move_and_slide(velocity)
+	velocity = velocity.rotated(calculatedRotation) * Speed * delta
+	var collisionInfo: KinematicCollision2D = move_and_collide(velocity)
+	#move_and_slide(velocity)
 	
 	
 func get_input():	
