@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tank.gd" type="Script" id=1]
+[ext_resource path="res://Assets/topdowntanks/PNG/Tanks/tracksSmall.png" type="Texture" id=2]
+[ext_resource path="res://Assets/topdowntanks/PNG/Tanks/tankRed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/topdowntanks/PNG/Tanks/barrelRed.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 43, 39.5 )
+
+[node name="Tank" type="KinematicBody2D"]
+collision_mask = 8
+script = ExtResource( 1 )
+
+[node name="TracksSmall" type="Sprite" parent="."]
+position = Vector2( -0.500003, -1.5 )
+scale = Vector2( 1.17568, 0.759615 )
+texture = ExtResource( 2 )
+
+[node name="TankRed" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="BarrelRed" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+offset = Vector2( 0, -35 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -1.5 )
+shape = SubResource( 1 )
